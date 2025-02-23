@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin:0;
+            font-family: Arial;
+        }
+
+        #exibicao {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display:flex;
+            flex-direction: column;
+            align-items: center
+        }
+        #botoes {
+            position:absolute;
+            top: 75%;
+            left: 50%;
+            transform:translate(-50%, -75%)
+        }
+        #textoContador {
+            font-size: 80px;
+        }
+
+        #numeroAtual {
+            font-size: 200px;
+            color: black
+        }
+
+        button {
+            border: 4px solid rgb(236, 161, 236);
+            border-radius: 30px;
+            font-size: 20px;
+            padding: 10px
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 3px solid rgb(236, 161, 236)
+        }
+
+        #cabeca {
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 20px
+        }
+    </style>
+</head>
+<body>
+    <div id="cabeca">
+        <span>Contador</span>
+    </div>
+    <div id="exibicao">
+        <span id="textoContador">Contador</span>
+        <span id="numeroAtual">0</span>
+    </div>
+    <div id="botoes">
+        <button onclick="numero = decrescimo(numero); atualizaValor(numero)">Decrésimo</button>
+        <button onclick="numero = resetar(numero); atualizaValor(numero)">Resetar</button>
+        <button onclick="numero = acrescimo(numero); atualizaValor(numero)">Acrescimo</button>
+    </div>
+</body>
+<script>
+    let numero = 0
+    let numeroAtual = document.getElementById('numeroAtual')
+    
+    function acrescimo(numero){
+        return numero += 1
+    }
+    function decrescimo(numero) {
+        return numero -= 1
+    }
+    function resetar(numero) {
+        return numero = 0
+    }
+
+    function atualizaValor(numero) {
+        numeroAtual.innerText = numero
+    }
+
+
+</script>
+</html>
